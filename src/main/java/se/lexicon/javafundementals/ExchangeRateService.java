@@ -51,7 +51,7 @@ public class ExchangeRateService {
             JsonNode root = mapper.readTree(resp.body());
             JsonNode rates = root.get("rates");
             if (rates == null || rates.get("USD") == null || rates.get("SEK") == null) {
-                System.out.println("[exchangerate.host] Unexpected JSON: " + truncate(resp.body(), 200));
+               // System.out.println("[exchangerate.host] Unexpected JSON: " + truncate(resp.body(), 200));
                 return null;
             }
             double eurToUsd = rates.get("USD").asDouble();
@@ -81,7 +81,7 @@ public class ExchangeRateService {
             JsonNode rates = root.get("rates");
             JsonNode base = root.get("base_code");
             if (rates == null || base == null || !"EUR".equals(base.asText())) {
-                System.out.println("[open.er-api.com] Unexpected JSON: " + truncate(resp.body(), 200));
+               // System.out.println("[open.er-api.com] Unexpected JSON: " + truncate(resp.body(), 200));
                 return null;
             }
             if (rates.get("USD") == null || rates.get("SEK") == null) {
