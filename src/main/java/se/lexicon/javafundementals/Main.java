@@ -8,6 +8,17 @@ public class Main {
         ExchangeRateService rateService = new ExchangeRateService();
         Scanner scanner = new Scanner(System.in);
 
+        // 🟢 Try to fetch live rates automatically at startup
+        System.out.println("Fetching latest currency rates...");
+        double[] rr = rateService.fetchLatestEUR_USD_SEK();
+        if (rr != null) {
+            converter.setRatesFromEUR(rr[0], rr[1]);
+            converter.printUpdatedRatesMessage();
+        } else {
+            System.out.println("⚠️ Could not fetch live rates automatically. Using static fallback.");
+        }
+
+        // Main program loop
         while (true) {
             System.out.println("\n=== Currency Converter ===");
             System.out.println("1. SEK → USD");
@@ -19,6 +30,7 @@ public class Main {
             System.out.println("9. Update live rates (online)");
             System.out.println("0. Exit");
             System.out.print("Choose option: ");
+
 
             int choice;
             try {
