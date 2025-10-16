@@ -22,15 +22,19 @@ It demonstrates the use of Java fundamentals such as user input handling, contro
 1. Clone the repository:
    ```bash
    git clone https://github.com/Zicocoder/Currencyexchange.git
-Switch to the main branch:
+   ```
 
+2. Switch to the main branch:
+   ```bash
+   git checkout main
+   ```
 
-git checkout main
-Run the program using Maven or from IntelliJ IDEA:
+3. Run the program using Maven or from IntelliJ IDEA:
+   ```bash
+   mvn compile exec:java
+   ```
+   or simply run the `Main` class inside IntelliJ.
 
-
-mvn compile exec:java
-or simply run the Main class inside IntelliJ.
 
 Example Output
 ```
