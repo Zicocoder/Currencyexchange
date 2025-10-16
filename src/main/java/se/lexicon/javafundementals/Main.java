@@ -1,17 +1,39 @@
 package se.lexicon.javafundementals;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n=== Currency Converter ===");
+            System.out.println("1. SEK → USD");
+            System.out.println("2. USD → SEK");
+            System.out.println("3. SEK → EUR");
+            System.out.println("4. EUR → SEK");
+            System.out.println("5. USD → EUR");
+            System.out.println("6. EUR → USD");
+            System.out.println("0. Exit");
+            System.out.print("Choose option: ");
+
+            int choice;
+            try { choice = Integer.parseInt(scanner.nextLine()); }
+            catch (NumberFormatException e) { System.out.println("Invalid choice. Try again."); continue; }
+
+            if (choice == 0) { System.out.println("Goodbye!"); break; }
+
+            System.out.print("Enter amount: ");
+            double amount;
+            try {
+                amount = Double.parseDouble(scanner.nextLine());
+                if (amount < 0) { System.out.println("Amount cannot be negative."); continue; }
+            } catch (NumberFormatException e) { System.out.println("Invalid amount."); continue; }
+
+            // temporary
+            System.out.println("OK, you chose " + choice + " with amount " + amount + ". (Conversion coming next)");
         }
+
+        scanner.close();
     }
 }
