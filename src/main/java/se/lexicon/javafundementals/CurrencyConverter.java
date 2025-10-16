@@ -4,13 +4,15 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class CurrencyConverter {
+    // ECB reference rates for: 2025.10.16
+    private final double EUR_TO_USD = 1.162200;
+    private final double USD_TO_EUR = 0.860437;
 
-    private final double SEK_TO_USD = 0.09;
-    private final double USD_TO_SEK = 11.10;
-    private final double SEK_TO_EUR = 0.088;
-    private final double EUR_TO_SEK = 11.40;
-    private final double USD_TO_EUR = 0.96;
-    private final double EUR_TO_USD = 1.04;
+    private final double EUR_TO_SEK = 11.019500;
+    private final double SEK_TO_EUR = 0.090748;
+
+    private final double USD_TO_SEK = 9.481587;
+    private final double SEK_TO_USD = 0.105468;
 
     public double convert(int choice, double amount) {
         return switch (choice) {
