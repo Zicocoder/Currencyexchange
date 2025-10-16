@@ -24,13 +24,11 @@ It demonstrates the use of Java fundamentals such as user input handling, contro
    git clone https://github.com/Zicocoder/Currencyexchange.git
 Switch to the main branch:
 
-bash
-Copy code
+
 git checkout main
 Run the program using Maven or from IntelliJ IDEA:
 
-bash
-Copy code
+
 mvn compile exec:java
 or simply run the Main class inside IntelliJ.
 
