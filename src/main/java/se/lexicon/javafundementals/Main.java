@@ -27,7 +27,6 @@ public class Main {
             System.out.println("4. EUR → SEK");
             System.out.println("5. USD → EUR");
             System.out.println("6. EUR → USD");
-            System.out.println("9. Update live rates (online)");
             System.out.println("0. Exit");
             System.out.print("Choose option: ");
 
@@ -45,17 +44,6 @@ public class Main {
                 break;
             }
 
-            if (choice == 9) {
-                rr = rateService.fetchLatestEUR_USD_SEK();
-                if (rr == null) {
-                    System.out.println("Could not fetch live rates. Keeping existing rates.");
-                } else {
-                    converter.setRatesFromEUR(rr[0], rr[1]);
-                    System.out.printf("Live rates updated. EUR→USD=%.6f, EUR→SEK=%.6f%n", rr[0], rr[1]);
-                    converter.printCurrentRates();
-                }
-                continue;
-            }
 
             System.out.print("Enter amount: ");
             double amount;
