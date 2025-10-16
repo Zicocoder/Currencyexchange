@@ -34,7 +34,7 @@ If a network or API error occurs, the program falls back to predefined static ra
 3. If the API cannot be reached, it uses static fallback values and continues normally.
 
 ## Technical Details
-- Implemented using Java 17
+- Implemented using Java 25
 - Built and managed with Maven
 - Uses Jackson (Databind) for JSON parsing
 - Uses the built-in Java HttpClient for network requests
