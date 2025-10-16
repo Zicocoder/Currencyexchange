@@ -46,7 +46,7 @@ public class Main {
             }
 
             if (choice == 9) {
-                double[] rr = rateService.fetchLatestEUR_USD_SEK();
+                rr = rateService.fetchLatestEUR_USD_SEK();
                 if (rr == null) {
                     System.out.println("Could not fetch live rates. Keeping existing rates.");
                 } else {
