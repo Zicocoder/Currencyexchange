@@ -47,7 +47,7 @@ Example Output
 6. EUR → USD
 0. Exit
 
-Choose option:
+Choose option: 1
 Enter amount: 100
 Converted (100.00) SEK → USD = 10.50 [2025-10-16 10:50:29]
 ```
