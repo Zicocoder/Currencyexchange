@@ -24,13 +24,13 @@ If a network or API error occurs, the program falls back to predefined static ra
 ## How It Works
 1. When the program starts, it automatically attempts to fetch live rates.
 2. If successful, the converter prints:
-
+````
    Live rates successfully updated:
    1 EUR = 1.1637 USD
    1 EUR = 11.0302 SEK
    1 USD = 9.4785 SEK
    Last update: 2025-10-16 10:52:21 UTC  
-
+````
 3. If the API cannot be reached, it uses static fallback values and continues normally.
 
 ## Technical Details
